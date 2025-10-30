@@ -1,0 +1,92 @@
+.about-section {
+  padding: 60px 0;
+  background-color: transparent;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white-color, #ffffff);
+  margin-bottom: 3rem;
+}
+
+.about-glowing-container {
+  border: 1px solid var(--accent-color, #a770ef);
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: rgba(167, 112, 239, 0.05);
+  filter: drop-shadow(0 0 15px rgba(167, 112, 239, 0.3));
+
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 15px rgba(167, 112, 239, 0.2),
+      0 0 30px rgba(167, 112, 239, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(167, 112, 239, 0.5),
+      0 0 50px rgba(167, 112, 239, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(167, 112, 239, 0.2),
+      0 0 30px rgba(167, 112, 239, 0.1);
+  }
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  color: var(--text-color, #ccc);
+}
+
+.about-greeting {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white-color, #fff);
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+
+.about-visuals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px; 
+  position: relative; 
+  overflow: hidden;
+}
+
+/* --- RESPONSIF --- */
+@media (max-width: 992px) {
+  .about-content-grid {
+    grid-template-columns: 1fr; /* Susun ke bawah */
+    gap: 3rem;
+  }
+
+  .about-text {
+    text-align: center; /* Tengahkan teks di tablet/HP */
+  }
+
+  .about-visuals {
+    /* Sesuaikan tinggi di HP */
+    min-height: 400px;
+  }
+
+  .about-glowing-container {
+    padding: 1.5rem; /* Kurangi padding di HP */
+  }
+}

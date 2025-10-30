@@ -1,13 +1,15 @@
 import React from 'react';
-import styles from './SkillCard.module.css'; 
+import './SkillCard.css'; 
 
-const SkillCard = ({ name, icon }) => {
-    return (
-        <div className={styles.skillCard}>
-            <i className={`${icon} ${styles.skillIcon}`}></i>
-            <h3>{name}</h3>
-        </div>
-    );
+const SkillCard = ({ icon, name, delay }) => {
+  return (
+    <div className="skill-card" style={{ animationDelay: `${delay}s` }}>
+      <div className="skill-icon-container">
+        {icon}
+      </div>
+      <h3 className="skill-name">{name}</h3>
+    </div>
+  );
 };
 
 export default SkillCard;

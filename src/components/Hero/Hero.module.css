@@ -1,50 +1,289 @@
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-    position: relative; /* Penting untuk positioning background */
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .heroContent {
-    max-width: 800px;
-    z-index: 1; /* Pastikan konten di atas background */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  background-color: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+/* .heroText {
+  animation: fadeInSlideLeft 1s ease-out;
+} */
+
+.heroTitle,
+.heroSubtitle,
+.heroDescription,
+.heroActions {
+  animation-name: fadeInSlideLeft;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 .heroTitle {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  animation-delay: 0.2s;
 }
 
-.heroTitle span {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.heroName {
+  background: linear-gradient(90deg, #a770ef, #cf8bf3, #fdb99b, #b792e7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-emphasis-color: transparent;
+  background-size: 400% auto;
+  animation: gradient-shift 5s ease infinite;
+}
+
+.TypeAnimation_cursor {
+  color: var(--accent-color, #a770ef);
+  animation: blink-caret 0.75s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent-color, #a770ef);
+  }
 }
 
 .heroSubtitle {
-    font-size: 1.5rem;
-    color: var(--accent-color);
-    margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  animation-delay: 0.4s;
 }
 
 .heroDescription {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  animation-delay: 0.6s;
 }
 
-.heroButtons {
-    display: flex;
-    gap: 20px;
+.heroActions {
+  display: flex;
+  gap: 1.5rem;
+  animation-delay: 0.8s;
+}
+
+.heroButtonPrimary,
+.heroButtonSecondary {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heroButtonPrimary {
+  color: var(--white-color);
+  background-image: linear-gradient(90deg, #a770ef, #cf8bf3, #fdb99b, #a770ef);
+  background-size: 200% auto;
+  background-position: 0% 50%;
+  border: 1px solid transparent;
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 0 15px rgba(167, 112, 239, 0.3));
+  animation: button-glow-pulse 2s ease-in-out infinite;
+}
+
+.heroButtonPrimary:hover {
+  background-position: 100% 50%;
+  transform: translateY(-3px);
+
+  box-shadow: 0 0 20px rgba(167, 112, 239, 0.8),
+    0 0 40px rgba(167, 112, 239, 0.5);
+  animation: none;
+}
+
+.heroButtonSecondary {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  transition: color 0.4s ease;
+}
+
+.heroButtonSecondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color);
+
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-out;
+  z-index: -1;
+}
+
+.heroButtonSecondary:hover {
+  color: var(--white-color);
+  border-color: var(--accent-color);
+}
+
+.heroButtonSecondary:hover::before {
+  transform: translateX(0);
+}
+
+.heroImageContainer {
+  display: flex;
+  /* margin-left: 50px; */
+  justify-content: center;
+  animation: fadeInSlideRight 1s ease-out;
+  background-color: transparent;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes button-glow-pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(167, 112, 239, 0.4),
+      0 0 20px rgba(167, 112, 239, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(167, 112, 239, 0.7),
+      0 0 40px rgba(167, 112, 239, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(167, 112, 239, 0.4),
+      0 0 20px rgba(167, 112, 239, 0.2);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .heroText {
+    text-align: center;
+    order: 2;
+  }
+
+  .heroDescription {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+  }
+
+  .heroActions {
     justify-content: center;
+  }
+
+  .heroImageContainer {
+    order: 1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
 }
 
-@media (max-width: 768px) {
-    .heroTitle { font-size: 2.5rem; }
-    .heroButtons { flex-direction: column; align-items: center; }
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .heroSubtitle {
+    font-size: 1.4rem;
+  }
+
+  .heroDescription {
+    font-size: 1rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .heroButtonPrimary,
+  .heroButtonSecondary {
+    width: 90%;
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .heroImageContainer {
+  }
 }

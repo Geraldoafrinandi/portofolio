@@ -1,26 +1,80 @@
-import React from 'react';
-import { useInView } from 'react-intersection-observer';
-import Button from '../ui/Button/Button';
-import AnimatedBackground from '../ui/AnimatedBackground/AnimatedBackground'; // <-- IMPOR
-import styles from './Hero.module.css';
+import React from "react";
+import styles from "./Hero.module.css";
+import ProfileCard from "../Ui/ProfileCard/ProfileCard"
+import myProfilePic from "../../assets/profile-pict.jpg";
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
-    const { ref, inView } = useInView({ triggerOnce: true });
+  return (
+    <section id="home" className={`${styles.hero} container`}>
+      <div className={styles.heroContent}>
+        <div className={styles.heroText}>
+          <h1 className={styles.heroTitle}>
+            Halo, Saya{" "}
+            <span className={styles.heroName}>
+              <TypeAnimation
+                sequence={[
+                  "Geraldo Afrinandi Persada", 
+                  1000, 
+                  () => {
+                    
+                  },
+                ]}
+                wrapper="span" 
+                cursor={true} 
+                repeat={Infinity} 
+                speed={50} 
+              />
+            </span>
+          </h1>
 
-    return (
-        <section id="home" className={`${styles.hero} ${inView ? 'animate-fade-in' : ''}`} ref={ref}>
-            <AnimatedBackground /> {/* <-- TAMBAHKAN DI SINI */}
-            <div className={styles.heroContent}>
-                <h1 className={styles.heroTitle}>Halo, Saya <span>Nama Anda</span></h1>
-                <p className={styles.heroSubtitle}>Web Developer & UI/UX Enthusiast</p>
-                <p className={styles.heroDescription}>Saya menciptakan pengalaman digital yang indah dan fungsional.</p>
-                <div className={styles.heroButtons}>
-                    <Button href="#projects">Lihat Proyek Saya</Button>
-                    <Button variant="secondary" href="#contact">Hubungi Saya</Button>
-                </div>
-            </div>
-        </section>
-    );
+          <h3 className={styles.heroSubtitle}>
+            <TypeAnimation
+              sequence={[
+                "Web Developer",
+                1000, 
+                "App Developer",
+                1000, 
+                "Software Engineer", 
+                1000,
+              ]}
+              wrapper="span"
+              cursor={true}
+              repeat={Infinity}
+              speed={50}
+            />
+          </h3>
+
+          <p className={styles.heroDescription}>
+            Saya menciptakan pengalaman digital yang indah dan fungsional.
+            Selamat datang di portofolio pribadi saya.
+          </p>
+          <div className={styles.heroActions}>
+            <a href="#projects" className={styles.heroButtonPrimary}>
+              Lihat Proyek Saya
+            </a>
+            <a href="#contact" className={styles.heroButtonSecondary}>
+              Hubungi Saya
+            </a>
+          </div>
+        </div>
+
+        <div className={styles.heroImageContainer}>
+          <ProfileCard
+            avatarUrl={myProfilePic}
+            miniAvatarUrl={myProfilePic}
+            name="Geraldo Afrinandi Persada"
+            title="App Developer | Web Developer"
+            handle="Geraldo"
+            status="Online"
+            contactText="Hubungi Saya"
+            showUserInfo={true}
+            enableTilt={true}
+          />
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;

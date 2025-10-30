@@ -1,33 +1,42 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
-import styles from './Skills.module.css';
-import SkillCard from './SkillCard/SkilCard'; 
+import SkillCard from './SkillCard/SkilCard';
+import './Skills.css'; 
 
+import { FaReact, FaVuejs, FaFigma, FaNodeJs, FaLaravel } from 'react-icons/fa';
+import { SiFlutter, SiMysql, SiNextdotjs } from 'react-icons/si';
+import { DiLaravel, DiMysql } from 'react-icons/di';
+import { GrMysql } from 'react-icons/gr';
+import { FaJava } from 'react-icons/fa6';
 
 const skillsData = [
-    { id: 1, name: 'HTML5', icon: 'fab fa-html5' },
-    { id: 2, name: 'CSS3', icon: 'fab fa-css3-alt' },
-    { id: 3, name: 'JavaScript', icon: 'fab fa-js-square' },
-    { id: 4, name: 'React', icon: 'fab fa-react' },
-    { id: 5, name: 'Node.js', icon: 'fab fa-node-js' },
-    { id: 6, name: 'Git', icon: 'fab fa-git-alt' },
+  { icon: <SiFlutter />, name: "Flutter" },
+  { icon: <FaLaravel />, name: "Laravel" },
+  { icon: <GrMysql />, name: "MySQL" },
+  { icon: <FaVuejs />, name: "Vue.js" },
+  { icon: <FaNodeJs />, name: "Node.js" },
+  { icon: <FaFigma />, name: "Figma" },
+//   { icon: <FaReact />, name: "React" },
+//   { icon: <FaJava />, name: "Java" },
 ];
 
 const Skills = () => {
-    const { ref, inView } = useInView({ triggerOnce: true });
-
-    return (
-        <section id="skills" className={`section-padding ${inView ? 'animate-fade-in' : ''}`} ref={ref}>
-            <div className="container">
-                <h2 className="section-title">Keahlian Saya</h2>
-                <div className={styles.skillsGrid}>
-                    {skillsData.map(skill => (
-                        <SkillCard key={skill.id} name={skill.name} icon={skill.icon} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section id="skills" className="skills-section">
+      <div className="container">
+        <h2 className="section-title">Tech & Development</h2>
+        <div className="skills-grid">
+          {skillsData.map((skill, index) => (
+            <SkillCard
+              key={index}
+              icon={skill.icon}
+              name={skill.name}
+              delay={index * 0.1} 
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Skills;

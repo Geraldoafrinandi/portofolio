@@ -1,25 +1,63 @@
-import Header from './components/Header/Header.jsx';
-import Hero from './components/Hero/Hero.jsx';
-import About from './components/About/About.jsx';
-import Skills from './components/Skills/Skills.jsx';
-import Projects from './components/Projects/Projects.jsx';
-import Contact from './components/Contact/Contact.jsx';
-import Footer from './components/Footer/Footer.jsx';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import Header from "./components/header/Header";
+import Hero from "./components/Hero/Hero";
+import CurvedLoop from "./components/CurvedLoop/CurverLoop";
+import About from "./components/about/About";
+import Skills from "./components/Skills/Skills";
+import Projects from "./components/projects/Projects";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
+import CircularGallery from "./components/CircularGalery/CircularGalery";
+
+import AnimatedStars from "./components/ui/AnimatedBackground/AnimatedStars";
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <div className="App">
+      <div className="mainBackground">
+        <AnimatedStars />
+      </div>
+
+      <div className="mainContent">
+        <Header />
+        <main>
+          <Hero />
+          {/* <CurvedLoop
+            marqueeText="Web Developer ✦ App Developer ✦"
+            speed={1.5}
+            curveAmount={0}
+            interactive={true}
+            direction="right"
+            className="curved-text-style-primary"
+          /> */}
+
+          <About />
+
+          <div style={{ height: "400px", position: "relative" }}>
+            <CircularGallery
+              bend={-3}
+              textColor="#ffffff"
+              borderRadius={0.05}
+              scrollEase={0.02}
+            />
+          </div>
+          {/* <CurvedLoop
+            marqueeText="Frontend Enthusiast ✦ UI/UX Focus ✦"
+            speed={1.5}
+            curveAmount={0}
+            interactive={true}
+            direction="left"
+            className="curved-text-style-secondary"
+          /> */}
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 }
 
