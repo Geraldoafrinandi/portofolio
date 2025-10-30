@@ -1,0 +1,50 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative; /* Penting untuk positioning background */
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.heroContent {
+    max-width: 800px;
+    z-index: 1; /* Pastikan konten di atas background */
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+}
+
+.heroTitle span {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.heroDescription {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .heroTitle { font-size: 2.5rem; }
+    .heroButtons { flex-direction: column; align-items: center; }
+}
