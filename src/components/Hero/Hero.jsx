@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import ProfileCard from "../Ui/ProfileCard/ProfileCard";
+import ProfileCard from "../ui/ProfileCard/ProfileCard";
 import myProfilePic from "../../assets/profile-pict.jpg";
 import { TypeAnimation } from "react-type-animation";
 
