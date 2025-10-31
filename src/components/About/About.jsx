@@ -1,7 +1,7 @@
 // src/components/About.jsx
 
 import React from "react";
-import CardSwap, { Card } from "../CardSwap.jsx/CardSwap";
+import CardSwap, { Card } from "../CardSwap/CardSwap";
 import "./About.css";
 import mobileDev from "../../assets/images/flutter.jpeg";
 import webDev from "../../assets/images/web.jpeg";
