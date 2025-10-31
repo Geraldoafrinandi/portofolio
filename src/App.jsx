@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import CurvedLoop from "./components/CurvedLoop/CurverLoop";
 import About from "./components/about/About";
 import Skills from "./components/Skills/Skills";
-import Projects from "./components/projects/Projects";
-import Contact from "./components/contact/Contact";
+import Projects from "./components/Projects/Projects";
+import Contact from "./components/Contact/Contact";
 import Footer from "./components/footer/Footer";
 import CircularGallery from "./components/CircularGalery/CircularGalery";
 
