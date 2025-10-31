@@ -1,24 +1,58 @@
 .contactForm {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  max-width: 600px;
+  margin: 3.5rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .contactForm input,
 .contactForm textarea {
-    width: 100%;
-    padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: inherit;
-    font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px; 
+
+  border-radius: 8px; 
+  border: 2px solid rgba(167, 112, 239, 0.2); 
+
+  background-color: var(--secondary-bg-color, #1a1a2e);
+
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 1rem;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.contactForm textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.contactForm input:hover,
+.contactForm textarea:hover {
+  transform: translateY(-2px);
+  border-color: rgba(167, 112, 239, 0.5);
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: none;
+
+  border-color: var(--accent-color, #a770ef);
+  background-color: rgba(167, 112, 239, 0.1);
+  box-shadow: 0 0 20px rgba(167, 112, 239, 0.4);
 }
 
 .contactForm input::placeholder,
 .contactForm textarea::placeholder {
-    color: #888;
+  color: #888;
+}
+
+.contactForm > :global(button) {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
 }

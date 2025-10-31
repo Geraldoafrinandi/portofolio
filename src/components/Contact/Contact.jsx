@@ -1,37 +1,45 @@
-import React, { useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import Button from '../ui/Button/Button';
-import styles from './Contact.module.css';
+import React from "react";
+import { useInView } from "react-intersection-observer";
+import Button from "../ui/Button/Button";
+import styles from "./Contact.module.css";
 
 const Contact = () => {
-    const { ref, inView } = useInView({ triggerOnce: true });
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const { ref, inView } = useInView({ triggerOnce: true });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+  // Kita tidak perlu useState, handleChange, atau handleSubmit lagi!
+  // Formspree menangani semuanya.
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Di sini Anda bisa menambahkan logika untuk mengirim email
-        // Misalnya menggunakan EmailJS, Formspree, atau backend sendiri
-        alert(`Terima kasih ${formData.name}, pesan Anda telah terkirim! (Ini hanyalah demo)`);
-        setFormData({ name: '', email: '', message: '' });
-    };
-
-    return (
-        <section id="contact" className={`section-padding ${inView ? 'animate-fade-in' : ''}`} ref={ref}>
-            <div className="container">
-                <h2 className="section-title">Hubungi Saya</h2>
-                <form className={styles.contactForm} onSubmit={handleSubmit}>
-                    <input type="text" name="name" placeholder="Nama Lengkap" value={formData.name} onChange={handleChange} required />
-                    <input type="email" name="email" placeholder="Email Anda" value={formData.email} onChange={handleChange} required />
-                    <textarea name="message" placeholder="Pesan Anda" rows="5" value={formData.message} onChange={handleChange} required></textarea>
-                    <Button type="submit">Kirim Pesan</Button>
-                </form>
-            </div>
-        </section>
-    );
+  return (
+    <section
+      id="contact"
+      className={`section-padding ${inView ? "animate-fade-in" : ""}`}
+      ref={ref}
+    >
+      <div className="container">
+        <h2 className="section-title">Contact Me</h2>
+        <form
+          className={styles.contactForm}
+          action="https://formspree.io/f/mzzkjyqe"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Message"
+            rows="5"
+            required
+          ></textarea>
+          <Button type="submit">Send Message</Button>
+        </form>
+      </div>
+    </section>
+  );
 };
 
 export default Contact;
