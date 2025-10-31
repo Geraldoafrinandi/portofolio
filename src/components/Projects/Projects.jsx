@@ -12,7 +12,7 @@ const projectData = [
     { id: 1, title: 'Sistem Klinik Sejahtera', tech: 'Flutter, PHP', image: klinikImage, liveUrl: '#', githubUrl: 'https://github.com/Geraldoafrinandi/project-mobile.git' },
     { id: 2, title: 'NutriVision', tech: 'Flutter , Node Js', image: capstone, liveUrl: '#', githubUrl: 'https://github.com/Geraldoafrinandi/capstone.git' },
     { id: 3, title: 'Sistem Penjadwalan Sidang Tugas Akhir', tech: 'Laravel, Bootsrap', image: PBL, liveUrl: '#', githubUrl: 'https://github.com/Geraldoafrinandi/jadwal-sidang.git' },
-    { id: 3, title: 'PerpusKita', tech: 'Node Js, Vue', image: perpus, liveUrl: '#', githubUrl: 'https://github.com/Geraldoafrinandi/perpus-topsus.git' },
+    { id: 4, title: 'PerpusKita', tech: 'Node Js, Vue', image: perpus, liveUrl: '#', githubUrl: 'https://github.com/Geraldoafrinandi/perpus-topsus.git' },
 ];
 
 const Projects = () => {

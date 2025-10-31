@@ -1,5 +1,3 @@
-// src/components/About.jsx
-
 import React from "react";
 import CardSwap, { Card } from "../CardSwap/CardSwap";
 import "./About.css";

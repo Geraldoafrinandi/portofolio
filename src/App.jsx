@@ -10,7 +10,6 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/footer/Footer";
 import CircularGallery from "./components/CircularGalery/CircularGalery";
-
 import AnimatedStars from "./components/ui/AnimatedBackground/AnimatedStars";
 
 function App() {
