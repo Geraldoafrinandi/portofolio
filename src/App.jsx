@@ -8,7 +8,7 @@ import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 import CircularGallery from "./components/CircularGalery/CircularGalery";
 import AnimatedStars from "./components/ui/AnimatedBackground/AnimatedStars";
 
