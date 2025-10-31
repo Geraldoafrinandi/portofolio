@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import CurvedLoop from "./components/CurvedLoop/CurverLoop";
-import About from "./components/about/About";
+import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
