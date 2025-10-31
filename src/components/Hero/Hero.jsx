@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import ProfileCard from "../Ui/ProfileCard/ProfileCard"
+import ProfileCard from "../Ui/ProfileCard/ProfileCard";
 import myProfilePic from "../../assets/profile-pict.jpg";
 import { TypeAnimation } from "react-type-animation";
 
@@ -11,31 +11,17 @@ const Hero = () => {
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
             Halo, Saya{" "}
-            <span className={styles.heroName}>
-              <TypeAnimation
-                sequence={[
-                  "Geraldo Afrinandi Persada", 
-                  1000, 
-                  () => {
-                    
-                  },
-                ]}
-                wrapper="span" 
-                cursor={true} 
-                repeat={Infinity} 
-                speed={50} 
-              />
-            </span>
+            <span className={styles.heroName}>Geraldo Afrinandi Persada</span>
           </h1>
 
           <h3 className={styles.heroSubtitle}>
             <TypeAnimation
               sequence={[
                 "Web Developer",
-                1000, 
+                1000,
                 "App Developer",
-                1000, 
-                "Software Engineer", 
+                1000,
+                "Software Engineer",
                 1000,
               ]}
               wrapper="span"

@@ -46,14 +46,43 @@
 
 @media (max-width: 768px) {
   .card-swap-container {
+    
+    position: relative;  
+    
+    right: auto;         
+    bottom: auto;        
+    
+    transform-origin: center center; 
+    
+    transform: scale(0.9); 
+    
    
-    transform: scale(0.9);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+  .card p {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }
 
 @media (max-width: 480px) {
   .card-swap-container {
    
-    transform: scale(0.8);
+    transform: scale(0.75); 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card {
+    padding: 0.8rem;
   }
 }
