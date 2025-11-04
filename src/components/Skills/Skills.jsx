@@ -2,11 +2,12 @@ import React from 'react';
 import SkillCard from './SkillCard/SkilCard';
 import './Skills.css'; 
 
-import { FaReact, FaVuejs, FaFigma, FaNodeJs, FaLaravel, FaPython } from 'react-icons/fa';
-import { SiCanva, SiFlutter, SiMysql, SiNextdotjs } from 'react-icons/si';
+import { FaReact, FaVuejs, FaFigma, FaNodeJs, FaLaravel, FaPython, FaHtml5, FaCss3, FaGit } from 'react-icons/fa';
+import { SiCanva, SiFlutter, SiGit, SiMysql, SiNextdotjs, SiPostman } from 'react-icons/si';
 import { DiLaravel, DiMysql, DiVisualstudio } from 'react-icons/di';
 import { GrMysql } from 'react-icons/gr';
 import { FaJava } from 'react-icons/fa6';
+import { RiTailwindCssFill } from 'react-icons/ri';
 
 const skillsData = [
   { icon: <SiFlutter />, name: "Flutter" },
@@ -15,10 +16,15 @@ const skillsData = [
   { icon: <FaVuejs />, name: "Vue.js" },
   { icon: <FaNodeJs />, name: "Node.js" },
   { icon: <FaFigma />, name: "Figma" },
+  { icon: <FaHtml5 />, name: "HTML" },
+  { icon: <FaCss3 />, name: "CSS" },
+  { icon: <SiPostman />, name: "Postman"},
+  { icon: <RiTailwindCssFill />, name: "Tailwind"},
+  { icon: <SiGit />, name: "Git"},
+  { icon: <FaReact />, name: "React" },
   // { icon: <FaPython />, name: "Python" },
   // { icon: <SiCanva />, name: "Canva" },
   // { icon: <DiVisualstudio />, name: "Vs Code" },
-//   { icon: <FaReact />, name: "React" },
 //   { icon: <FaJava />, name: "Java" },
 ];
 
