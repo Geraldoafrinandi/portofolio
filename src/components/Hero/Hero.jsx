@@ -52,7 +52,7 @@ const Hero = () => {
               Download CV
             </a>
             <a href="#contact" className={styles.heroButtonSecondary}>
-              Hubungi Saya
+              Contact Me
             </a>
           </div>
         </div>
