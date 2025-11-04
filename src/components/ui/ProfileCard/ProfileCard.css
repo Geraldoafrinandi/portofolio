@@ -183,7 +183,7 @@
 
 .pc-card:hover .pc-shine,
 .pc-card.active .pc-shine {
-  filter: brightness(0.5) contrast(1.1) saturate(0.5); 
+  filter: brightness(0.5) contrast(1.1) saturate(0.5);
   animation: none;
 }
 
@@ -250,7 +250,7 @@
   width: 100%;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) scale(1);
+  transform: translateX(-50%) scale(1.2);
   bottom: 2px;
   height: 100%;
   object-fit: cover;
@@ -310,6 +310,8 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transform: scale(4.0);
+  padding-bottom: 10px;
 }
 
 .pc-user-text {

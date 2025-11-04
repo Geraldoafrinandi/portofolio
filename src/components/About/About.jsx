@@ -1,9 +1,14 @@
 import React from "react";
 import CardSwap, { Card } from "../CardSwap/CardSwap";
 import "./About.css";
+
+import { FiLayout, FiSearch } from "react-icons/fi";
+import { BsCodeSlash } from "react-icons/bs";
+
+import { SiFlutter, SiReact, SiLaravel, SiVuedotjs } from "react-icons/si";
+
 import mobileDev from "../../assets/images/flutter.jpeg";
 import webDev from "../../assets/images/web.jpeg";
-import uiux from "../../assets/images/uiux.JPG";
 
 const About = () => {
   return (
@@ -13,22 +18,20 @@ const About = () => {
 
         <div className="about-glowing-container">
           <div className="about-content-grid">
+            
             <div className="about-text">
-              <h3 className="about-greeting">Halo, Saya Geraldo!</h3>
+              <h3 className="about-greeting">Hello, I’m Geraldo!</h3>
               <p>
-                Saya seorang pengembang perangkat lunak yang berfokus pada
-                pembuatan aplikasi mobile dan web dengan tampilan modern serta
-                mudah digunakan.
+                I’m a <b>software developer</b> focused on building <b>mobile</b> and <b>web</b> applications 
+                with modern, interactive, and user-friendly designs.
               </p>
               <p>
-                Saya menikmati proses mengubah ide menjadi tampilan dan
-                pengalaman yang menarik, fungsional, dan nyaman digunakan oleh
-                banyak orang.
+                I enjoy transforming ideas into engaging user experiences that are both 
+                visually appealing and highly functional.
               </p>
               <p>
-                Di waktu luang, saya suka <b>berpetualang dan berfoto</b> — dua
-                hal yang membantu saya menemukan inspirasi baru di setiap tempat
-                yang saya kunjungi.
+                In my free time, I love <b>exploring new places and photography</b> — 
+                two things that inspire me to find creativity in every journey.
               </p>
             </div>
 
@@ -38,41 +41,96 @@ const About = () => {
                 height={360}
                 cardDistance={40}
                 verticalDistance={50}
-                delay={2000}
+                delay={2500}
                 pauseOnHover={true}
                 easing="power1.inOut"
               >
                 <Card>
-                  <img
-                    src={mobileDev}
-                    alt="Mobile Development"
-                    className="card-image"
-                  />
-                  <h3 style={{ marginTop: "5px" }}>Mobile Development</h3>
-                  <p>
-                    Pengembangan aplikasi cross-platform performa <br/>tinggi
-                    menggunakan Flutter.
-                  </p>
+                  <ul className="services-list">
+                    <li className="service-item">
+                      <div className="service-icon">
+                        <FiLayout size={20} />
+                      </div>
+                      <div className="service-text">
+                        <h4 className="service-title">UI/UX Design</h4>
+                        <p className="service-desc">
+                          Clean and intuitive interface design.
+                        </p>
+                      </div>
+                    </li>
+                    <li className="service-item">
+                      <div className="service-icon">
+                        <BsCodeSlash size={20} />
+                      </div>
+                      <div className="service-text">
+                        <h4 className="service-title">Front-End Development</h4>
+                        <p className="service-desc">
+                          Interactive and responsive websites.
+                        </p>
+                      </div>
+                    </li>
+                    <li className="service-item">
+                      <div className="service-icon">
+                        <FiSearch size={20} />
+                      </div>
+                      <div className="service-text">
+                        <h4 className="service-title">User Research</h4>
+                        <p className="service-desc">
+                          Data-driven user insights and improvements.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
                 </Card>
+
                 <Card>
-                  <img
-                    src={webDev}
-                    alt="Web Development"
-                    className="card-image"
-                  />
-                  <h3 style={{ marginTop: "5px" }}> Web Development</h3>
-                  <p>
-                    Membangun situs web yang cepat dan interaktif <br /> dengan React,
-                    Laravel, dan Vue.
-                  </p>
+                  <div className="project-card-content">
+                    <img
+                      src={mobileDev}
+                      alt="Mobile Development"
+                      className="project-card-bg"
+                    />
+                    <div className="project-card-overlay"></div>
+                    
+                    <div className="project-card-text">
+                      <h3 className="project-card-title">Mobile Development</h3>
+                      <div className="project-card-tech">
+                        <SiFlutter title="Flutter" />
+                      </div>
+                      <p className="project-card-desc">
+                        Building <b>high-performance cross-platform</b> applications using <b>Flutter</b>.
+                      </p>
+                    </div>
+                  </div>
                 </Card>
+
                 <Card>
-                  <img src={uiux} alt="uiux" className="card-image" />
-                  <h3 style={{ marginTop: "5px" }}> UI/UX Design</h3>
-                  <p>Fokus pada desain yang bersih, gampang digunakan</p>
+                  <div className="project-card-content">
+                    <img
+                      src={webDev}
+                      alt="Web Development"
+                      className="project-card-bg"
+                    />
+                    <div className="project-card-overlay"></div>
+
+                    <div className="project-card-text">
+                      <h3 className="project-card-title">Web Development</h3>
+                      <div className="project-card-tech">
+                        <SiReact title="React" />
+                        <SiVuedotjs title="Vue.js" />
+                        <SiLaravel title="Laravel" />
+                      </div>
+                      <p className="project-card-desc">
+                        Building fast and dynamic websites with 
+                        <b> React</b>, <b>Laravel</b>, and <b>Vue</b>.
+                      </p>
+                    </div>
+                  </div>
                 </Card>
+
               </CardSwap>
             </div>
+            
           </div>
         </div>
       </div>

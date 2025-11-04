@@ -17,7 +17,6 @@
   padding: 2rem;
   background-color: rgba(167, 112, 239, 0.05);
   filter: drop-shadow(0 0 15px rgba(167, 112, 239, 0.3));
-
   animation: glow-pulse 3s ease-in-out infinite;
 }
 
@@ -38,7 +37,7 @@
 
 .about-content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
@@ -60,33 +59,180 @@
   margin-bottom: 1rem;
 }
 
-
 .about-visuals {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 450px; 
-  position: relative; 
+  min-height: 450px;
+  position: relative;
   overflow: hidden;
 }
 
-/* --- RESPONSIF --- */
+.card-title-list { 
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white-color, #ffffff);
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #5d3a9b;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white-color, #ffffff);
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.service-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white-color, #ffffff);
+  margin: 0 0 0.25rem 0;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--text-color, #ccc);
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+.card-image,
+.card-desc {
+  display: none;
+}
+
+.project-card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit; 
+}
+
+.project-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease-out;
+}
+
+.project-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: linear-gradient(
+    to top,
+    rgba(10, 5, 20, 0.95) 20%,
+    rgba(10, 5, 20, 0.7),
+    transparent
+  );
+  z-index: 1;
+}
+
+.project-card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  z-index: 2;
+  color: var(--white-color, #fff);
+}
+
+.project-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+.project-card-tech {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--text-color, #ccc);
+  margin-top: 0.5rem;
+  transition: all 0.3s ease-out;
+  opacity: 1;
+  max-height: 50px;
+  transform: translateY(0);
+}
+
+.project-card-desc {
+  font-size: 1rem;
+  color: var(--text-color, #ccc);
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(10px);
+}
+
+
+.project-card-content:hover .project-card-bg {
+  transform: scale(1.05); 
+}
+
+.project-card-content:hover .project-card-desc {
+  opacity: 1;
+  max-height: 150px;
+  transform: translateY(0);
+}
+
+.project-card-content:hover .project-card-tech {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-10px);
+}
+
 @media (max-width: 992px) {
   .about-content-grid {
-    grid-template-columns: 1fr; /* Susun ke bawah */
+    grid-template-columns: 1fr;
     gap: 3rem;
   }
 
   .about-text {
-    text-align: center; /* Tengahkan teks di tablet/HP */
+    text-align: center;
   }
 
   .about-visuals {
-    /* Sesuaikan tinggi di HP */
     min-height: 400px;
   }
 
   .about-glowing-container {
-    padding: 1.5rem; /* Kurangi padding di HP */
+    padding: 1.5rem;
   }
 }

@@ -6,9 +6,6 @@ import styles from "./Contact.module.css";
 const Contact = () => {
   const { ref, inView } = useInView({ triggerOnce: true });
 
-  // Kita tidak perlu useState, handleChange, atau handleSubmit lagi!
-  // Formspree menangani semuanya.
-
   return (
     <section
       id="contact"

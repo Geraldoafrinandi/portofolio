@@ -4,13 +4,21 @@ import ProfileCard from "../ui/ProfileCard/ProfileCard";
 import myProfilePic from "../../assets/profile-pict.jpg";
 import { TypeAnimation } from "react-type-animation";
 
+import myCV from "../../assets/CV.pdf";
+
 const Hero = () => {
+  const handleContactClick = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section id="home" className={`${styles.hero} container`}>
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
-            Halo, Saya{" "}
+            Hello, I’m{" "}
             <span className={styles.heroName}>Geraldo Afrinandi Persada</span>
           </h1>
 
@@ -32,12 +40,16 @@ const Hero = () => {
           </h3>
 
           <p className={styles.heroDescription}>
-            Saya menciptakan pengalaman digital yang indah dan fungsional.
-            Selamat datang di portofolio pribadi saya.
+            I create beautiful and functional digital experiences. Welcome to my
+            personal portfolio.
           </p>
           <div className={styles.heroActions}>
-            <a href="#projects" className={styles.heroButtonPrimary}>
-              Lihat Proyek Saya
+            <a
+              href={myCV}
+              className={styles.heroButtonPrimary}
+              download="Geraldo_Afrinandi_CV.pdf"
+            >
+              Download CV
             </a>
             <a href="#contact" className={styles.heroButtonSecondary}>
               Hubungi Saya
@@ -53,9 +65,10 @@ const Hero = () => {
             title="App Developer | Web Developer"
             handle="Geraldo"
             status="Online"
-            contactText="Hubungi Saya"
+            contactText="Contact Me"
             showUserInfo={true}
             enableTilt={true}
+            onContactClick={handleContactClick} 
           />
         </div>
       </div>
