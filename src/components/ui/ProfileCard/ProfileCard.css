@@ -311,7 +311,7 @@
   object-fit: cover;
   border-radius: 50%;
   transform: scale(4.0);
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .pc-user-text {
